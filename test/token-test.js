@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const { ethers } = require('hardhat')
+// const { ethers } = require('hardhat')
 
 describe('Token contract', () => {
   let tokenFactory
@@ -13,8 +13,8 @@ describe('Token contract', () => {
     [owner,account1,account2] = await ethers.getSigners()
     tokenFactory = await ethers.getContractFactory('PakoToken')
     token = await tokenFactory.deploy(
-      100000,
       '0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244',
+      100000
     )
     token.deployed()
   })
@@ -33,8 +33,8 @@ describe('Token contract', () => {
       let user1Balance =await token.balanceOf(account1.address)
       console.log('account one address',account1.address)
       console.log('user one balance before transfer',user1Balance)
-      await token.transfer(account1.address , 1)
-      expect(await token.balanceOf(account1.address)).to.equal(1)
+      // await token.transfer(account1.address , 0.0001)
+      // expect(await token.balanceOf(account1.address)).to.equal(0.0001)
     })
   })
 })
