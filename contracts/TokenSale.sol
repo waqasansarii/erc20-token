@@ -2,9 +2,11 @@
 pragma solidity ^0.8.0;
 
 import "./MyToken.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TokenSale {
-    address admin;
+
+contract TokenSale is Ownable {
+    address public admin;
     uint256 public tokenSold;
     uint256 public tokenPrice;
     PakoToken public pakoToken;
@@ -41,12 +43,12 @@ contract TokenSale {
         emit Sell(msg.sender, _numOfTokens);
     }
 
-    function endSale() public {
-        require(msg.sender == admin, "only admin can end sale");
+    function endSale() public onlyOwner {
+        // require(msg.sender == admin, "only admin can end sale");
         require(pakoToken.transfer(admin, pakoToken.balanceOf(address(this))));
         //    destroy contract  either this code
-        //   payable(admin).transfer(address(this).balance);
+          payable(admin).transfer(address(this).balance);
         //  or this code
-        selfdestruct(payable(admin));
+        // selfdestruct(payable(admin));
     }
 }
