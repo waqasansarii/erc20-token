@@ -9,6 +9,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract PakoToken is ERC20{
 
    constructor(address _account,uint initialSupply)  ERC20("Pako Token", "Pak"){
-       _mint(_account, initialSupply);
+       _mint(_account, initialSupply * 10**18);
    }
 }

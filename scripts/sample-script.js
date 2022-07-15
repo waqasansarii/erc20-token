@@ -17,7 +17,7 @@ async function main() {
   const tokenFactory = await hre.ethers.getContractFactory('PakoToken')
   const token = await tokenFactory.deploy(
     '0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244',
-    1000000,
+    10000,
   )
 
   await token.deployed()
@@ -70,6 +70,18 @@ main()
 // token sale contract address 0xC94bb5690C53247E9bA5CF3A2E5750f2bD65c5EF
 // admin 0x94FC1035713F7a2DAae589EA3F7a4494650240f7
 // 0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244 BigNumber { value: "250000" }
+// sale contract BigNumber { value: "750000" }
+// 0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244 BigNumber { value: "0" }
+// 0x94FC1035713F7a2DAae589EA3F7a4494650240f7 BigNumber { value: "0" }
+
+
+// new one 
+
+
+// token contract address 0xB678b41CBa79A7CfE34F0ffB49C5f955B01a85ec
+// token sale contract address 0xF0b44465029eBc1201a41156dD36506C61C03bD8
+// admin 0x94FC1035713F7a2DAae589EA3F7a4494650240f7
+// 0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244 BigNumber { value: "9999999999999999250000" }
 // sale contract BigNumber { value: "750000" }
 // 0x383ec8EFb4EAA1f62DF1A39B83CD2854D2ad2244 BigNumber { value: "0" }
 // 0x94FC1035713F7a2DAae589EA3F7a4494650240f7 BigNumber { value: "0" }
